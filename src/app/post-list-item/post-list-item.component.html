@@ -1,0 +1,17 @@
+
+<li [ngClass]="{'list-group-item': true, 'list-group-item-light': loveIts === 0, 'list-group-item-success': loveIts > 0,
+  'list-group-item-danger': loveIts < 0}">
+  <div [ngStyle]="{backgroundcolor: getColor()}">
+    <div>
+     <span style="float:right;font-style: italic;">{{created_at | date:'M/d/yy, h:mm a'}}</span>
+    </div>
+    <div >
+      <h3 [ngStyle]="{fontcolor: getColor()}">{{title}}</h3>
+    </div>
+    <p [ngStyle]="{fontcolor: getColor()}">{{content}}</p>
+    <div [ngStyle]="{display: inline-block}">
+        <button type="button" class="btn btn-success" style="margin-right:4px;"(click)="onMoreFan()">love it</button>
+        <button type="button" class="btn btn-danger" style="margin-left:2px;" (click)="onLessFan()">Don't love</button>
+    </div>
+  </div>
+</li>
